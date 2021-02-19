@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  mongodb_container:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_DATABASE: config_db
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: Expertflow464
+      #MONGODB_USER: CCM
+      #MONGODB_DATABASE: config_db
+      #MONGODB_PASS: Expertflow464 
+    ports:
+      - 27017:27017
+    volumes:
+      - ${PWD}/mongodb_data_container:/data/db
+      - ${PWD}/initdb:/docker-entrypoint-initdb.d
+
+
+#volumes:
+#  mongodb_data_container:
